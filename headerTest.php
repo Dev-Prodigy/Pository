@@ -1,0 +1,30 @@
+<?php 
+
+// header(" mime_content_type(text)");
+// echo"This <strong>text</strong> won't actually be bold.";
+ $msg= "";
+ echo $msg;
+
+?>
+
+
+
+<?php
+// User name and password for authentication
+$username = 'rock';
+$password = 'roll';
+if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) ||
+	($_SERVER['PHP_AUTH_USER'] != $username) || ($_SERVER['PHP_AUTH_PW'] != $password)) {
+// The user name/password are incorrect so send the authentication headers
+	// header('HTTP/1.1 401 Unauthorized');
+	$msg=" Succcessfully logged in";
+header('WWW-Authenticate: Basic realm="Guitar Wars"');
+header('location:loggedIn.php');
+
+exit('<h2>Guitar Wars</h2>Sorry, you must enter a valid user name and password to access this page.');
+} else {
+	$msg="login failed";
+
+}
+
+?>
