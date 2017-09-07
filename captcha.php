@@ -29,8 +29,6 @@
   for ($i = 0; $i < 5; $i++) {
     imageline($img, 0, rand() % CAPTCHA_HEIGHT, CAPTCHA_WIDTH, rand() % CAPTCHA_HEIGHT, $graphic_color);
   }
-
-
   // Sprinkle in some random dots
   for ($i = 0; $i < 50; $i++) {
     imagesetpixel($img, rand() % CAPTCHA_WIDTH, rand() % CAPTCHA_HEIGHT, $graphic_color);
